@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="all.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <%=message %>
+    <h1>Register</h1>
+    <form action="/register" method="POST">
+        <div class="container"> 
+
+            <div class="row"> 
+                <label for="username">Username</label>
+                <input type="text" id="firstName" name="username" placeholder="username" required>
+            </div>
+
+            <div class="row"> 
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="email" required>
+            </div>
+
+            <div class="row"> 
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="password" required>
+            </div>
+
+            <div> 
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+

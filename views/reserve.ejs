@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="reserve.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve room</title>
+</head>
+<body>
+    <a class="link" href="./index">Return</a>
+    <h1>Reserved Room</h1>
+    <hr>
+    <div>
+        <img class="image" src="/images/default_image.jpg" id="reserveImg" alt="default" width="500">
+    </div>
+    <hr>
+    <!-- Add a button or link to return to the selection page if needed -->
+</body>
+    <script>
+        // Retrieve the selected image details from local storage
+        const selectedImageSrc = localStorage.getItem('selectedImageSrc');
+        const selectedImageAlt = localStorage.getItem('selectedImageAlt');
+
+        console.log(selectedImageAlt);
+
+        // Display the selected image
+        if (selectedImageSrc && selectedImageAlt) {
+            const reserveImage = document.getElementById('reserveImg');
+            reserveImage.src = selectedImageSrc;
+            reserveImage.alt = selectedImageAlt;
+            }
+    </script>
+</html>
