@@ -10,7 +10,7 @@ const route = require('./Routes/routes')
 
 const {Index,login,reserve,signup,admin,roomtype} = require('./Control/ejs');
 
-//nodemailer transporter
+//nodemailer transporters
 const app = express();
 app.use(express.json());
 

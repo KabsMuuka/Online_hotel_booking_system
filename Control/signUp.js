@@ -2,13 +2,14 @@
 const bcrypt = require('bcrypt');
 const pool = require('../db/hotelDB');
 
-const register =  async(req,res) =>{
+const signUp =  async(req,res) =>{
     const {username,email,password} = req.body;
     //check if the email already exist
     const result = await pool.query(`SELECT email FROM register WHERE email = $1`,[email]);
     //checks if theres any matching email
     if(result.rows.length > 0){
-        req.flash('message',`Email already in Use: ${email}`)
+        req.flash('message',`Email already in Use: ${email}`);
+        res.redirect('/signup');
     }else{
     const insertQuery = `
      INSERT INTO register(username,email,password)
@@ -29,5 +30,4 @@ const register =  async(req,res) =>{
  }
 }
 
-
-module.exports = register;
+module.exports = signUp;

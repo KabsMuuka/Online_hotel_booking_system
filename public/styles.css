@@ -11,7 +11,11 @@ body {
     margin: 0;
     padding: 0;
 }
-
+.back_button{
+    display: flex;
+    justify-content: end; 
+    padding: 6px;
+}
 h1 {
     text-align: center;
     font-size: 24px; /* Increase font size for headings */
@@ -43,15 +47,18 @@ a {
     margin: 10px;
     padding: 2px 2px;
     text-decoration: none;
-    background-color: tomato;
-    color: #fff;
+    color: #ececec;
     border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s ease; /* Add hover effect on links */
 }
-
+.reserveRoom{
+    text-align: start;
+    background-color: rebeccapurple;
+    
+}
 a:hover {
-    background-color: #ff6347; /* Darken the background color on hover */
+    background-color:rgb(255, 30, 30); /* Darken the background color on hover */
 }
 
 
