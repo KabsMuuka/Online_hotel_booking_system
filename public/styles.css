@@ -10,6 +10,8 @@ body {
     background-color: lightgray; /* A lighter background color */
     margin: 0;
     padding: 0;
+    background-color: lightgray;
+    background-size: cover;
 }
 .back_button{
     display: flex;

@@ -2,8 +2,9 @@
 const bcrypt = require('bcrypt');
 const pool = require('../db/hotelDB');
 
-const signUp =  async(req,res) =>{
-    const {username,email,password} = req.body;
+const sign_up =  async(req,res) =>{
+    const {firstname,lastname,email,password} = req.body;
+    console.log(req.body)
     //check if the email already exist
     const result = await pool.query(`SELECT email FROM register WHERE email = $1`,[email]);
     //checks if theres any matching email
@@ -12,16 +13,16 @@ const signUp =  async(req,res) =>{
         res.redirect('/signup');
     }else{
     const insertQuery = `
-     INSERT INTO register(username,email,password)
-     VALUES($1, $2, $3); `
+     INSERT INTO register(firstname, lastname, email, password)
+     VALUES($1, $2, $3, $4); `
    try {
     //encrypt the password 
     const hashedPassword = await bcrypt.hash(password,10);
     //adding the encrypted password into the database
-    await pool.query(insertQuery,[username,email,hashedPassword]);
+    await pool.query(insertQuery,[firstname,lastname,email,hashedPassword]);
     
-    req.flash('message', 'Registration successful')
-    res.redirect('/signup');
+    req.flash('message',  `${firstname} ${lastname}, your Registration was successful`)
+    res.redirect('/thankyou');
 
    } catch (error) {
      req.flash('message', 'Registration failed Please try after sometime')
@@ -29,5 +30,4 @@ const signUp =  async(req,res) =>{
     }
  }
 }
-
-module.exports = signUp;
+module.exports = sign_up;

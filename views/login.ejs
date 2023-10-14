@@ -1,54 +1,69 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <link rel="stylesheet" href="all.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="./login.css">
+
 </head>
 <body>
+<!-- partial:index.partial.html -->
+<head>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  </head>
 
-    <a href="./signup"> SignUp </a> <span> <a class="about"> About</a> </span>
-    <hr>
-    
-    <h1>Login</h1> 
- 
-    <form action="/login" method="POST">
-        <div class="container">
-            <div class="message">
-                <%=message %>
-            </div>
-           
-            <div class="row"> 
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email" placeholder="Email" required>
-            </div>
+<body>
+    <div class="back_button">
+       <a  href="./signup">  <img src="images/signUP.jpg" width="70" alt="loading"> </a>
+       </div>
+<div id="form">
+  <div class="container">
+    <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-md-8 col-md-offset-2">
+      <div id="userform">
+        <ul class="nav nav-tabs nav-justified" role="tablist">
+          <li><a href="#login"  role="tab" data-toggle="tab">Log in</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade active in" id="signup">
+        
+          <div class="tab-pane fade in" id="login">
+            
+            <div class="message"> 
+                <%=message%>
+               </div>
+            <!-- LOGIN SECTION -->
+            <form action="/login" method="POST">
 
-            <div class="row"> 
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Password" required>
-            </div>
-
-            <div class="row"> 
-                <input type="hidden" id="admin" name="admin">
-            </div>
-
-            <div class="submit_btn"> 
-                <button onclick="setInputValue()" type="submit">Login</button>
-            </div>
+              <div class="form-group">
+                <label> Your Email<span class="req">*</span> </label>
+                <input type="email" class="form-control" name="email" id="email" required data-validation-required-message="Please enter your email address." autocomplete="off">
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="form-group">
+                <label> Password<span class="req">*</span> </label>
+                <input type="password" class="form-control" name="password" id="password" required data-validation-required-message="Please enter your password" autocomplete="off">
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="mrgn-30-top">
+                <button type="submit" class="btn btn-larger btn-block">
+                Log in
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-    </form>    
-    <hr>
-    <script> 
-    // function setInputValue(){
-    // //Getting an id from admin input
-    // const fromAdmin = document.getElementById('admin');
-    // fromAdmin.value = 'Admin';
-    // }
-    
+      </div>
+    </div>
+  </div>
+  <!-- /.container --> 
+</div>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+<!-- partial -->
+  <script  src="./login.js"></script>
 
-
-    
-    </script>
 </body>
 </html>

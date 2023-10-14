@@ -7,7 +7,7 @@ const loging = async(req,res) =>{
     //ENUM admin and customer
     const userResults = await pool.query(`SELECT email, password FROM register WHERE email=$1`,[email]);
     if(userResults.rows.length === 0){
-       req.flash('message','No user with that email exits');
+       req.flash('message','No user with that email exists');
        res.redirect('/login');
        return // to avoid further code execution 
     }
