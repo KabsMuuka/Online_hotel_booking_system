@@ -41,7 +41,9 @@ button {
     cursor: pointer;
     transition: background-color 0.3s;
 }
-
+.CustomerID{ 
+    size:0cap;
+}
 button:hover {
     background-color: #45a049;
 }

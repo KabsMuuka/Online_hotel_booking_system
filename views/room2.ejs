@@ -14,37 +14,45 @@
             <img src="/images/img2.jpg" id="img2" alt="Room 2" width="500">
         </div>
 
-        <div class="room-details">
-            <div class="form-row">
-                <span class="label"><strong>Check-in:</strong></span>
-                <input type="date" name="checkin" id="checkin">
-            </div>
+        <form action="/bookaRoom" method="POST">
+            <div class="room-details">
 
-            <div class="form-row">
-                <span class="label"><strong>Check-out:</strong></span>
-                <input type="date" name="checkout" id="checkout">
-            </div>
+                <div class="form-row">
+                    <span class="label"><strong>userid</strong></span>
+                    <input class="CustomerID" type="number" name="userid">
+                </div>
 
-            <div class="description">
-                <span class="label"><strong>Description:</strong></span>
-                <p>Yellowish room with a beautiful view of the city. A package diagram 
-                    of the four subsystems (Resort
-                    relations, Student booking, Accounting and
-                    finance, and Social networking) that includes all
-                    the problem domain classes.</p>
-            </div>
+                <div class="form-row">
+                    <span class="label"><strong>Check-in:</strong></span>
+                    <input type="date" name="checkIn">
+                </div>
+    
+                <div class="form-row">
+                    <span class="label"><strong>Check-out:</strong></span>
+                    <input type="date" name="checkOut" >
+                </div>
 
-            <div class="price">
-                <span class="label"><strong>Price:</strong></span>
-                <p>K900</p>
-            </div>
+                <div class="description">
+                    <span class="label"><strong>Description:</strong></span>
+                    <p>
+                        Our Deluxe king size room has a seating area, ample storage, 
+                        digital safe and mini fridge. This room can also be configured with an extra roll-away 
+                        bed for families of 3.</p>
+                </div>
+    
+                <div class="price">
+                    <span class="label"><strong>Price:</strong></span>
+                    <p>K500</p>
+                </div>
+    
+                <div class="room-number">
+                    <span class="label"><strong>Room Number:</strong></span>
+                    <p>54</p>
+                </div>
 
-            <div class="room-number">
-                <span class="label"><strong>Room Number:</strong></span>
-                <p>89</p>
-            </div>
-
-            <button onclick="Pick('img2')">Pick</button>
+    
+                <button onclick="Pick('img2')">Pick</button>
+        </form>
         </div>
     </div>
 </body>

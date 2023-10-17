@@ -14,37 +14,43 @@
             <img src="/images/img1.jpg" id="img1" alt="Room 1" width="500">
         </div>
 
-        <div class="room-details">
-            <div class="form-row">
-                <span class="label"><strong>Check-in:</strong></span>
-                <input type="date" name="checkin" id="checkin">
-            </div>
+        <form action="/bookaRoom" method="POST">
+            <div class="room-details">
 
-            <div class="form-row">
-                <span class="label"><strong>Check-out:</strong></span>
-                <input type="date" name="checkout" id="checkout">
-            </div>
+                <div class="form-row">
+                    <span class="label"><strong>userid</strong></span>
+                    <input class="CustomerID" type="number" name="userid">
+                </div>
 
-            <div class="description">
-                <span class="label"><strong>Description:</strong></span>
-                <p>Yellowish room with a beautiful view of the city. A package diagram 
-                    of the four subsystems (Resort
-                    relations, Student booking, Accounting and
-                    finance, and Social networking) that includes all
-                    the problem domain classes.</p>
-            </div>
+                <div class="form-row">
+                    <span class="label"><strong>Check-in:</strong></span>
+                    <input type="date" name="checkIn">
+                </div>
+    
+                <div class="form-row">
+                    <span class="label"><strong>Check-out:</strong></span>
+                    <input type="date" name="checkOut" >
+                </div>
 
-            <div class="price">
-                <span class="label"><strong>Price:</strong></span>
-                <p>K400</p>
-            </div>
+                <div class="description">
+                    <span class="label"><strong>Description:</strong></span>
+                    <p>Our king size four poster provides views over landscaped gardens.
+                     It has a seating area, ample storage, digital safe and mini fridge.</p>
+                </div>
+    
+                <div class="price">
+                    <span class="label"><strong>Price:</strong></span>
+                    <p>K400</p>
+                </div>
+    
+                <div class="room-number">
+                    <span class="label"><strong>Room Number:</strong></span>
+                    <p>66</p>
+                </div>
 
-            <div class="room-number">
-                <span class="label"><strong>Room Number:</strong></span>
-                <p>66</p>
-            </div>
-
-            <button onclick="Pick('img1')">Pick</button>
+    
+                <button onclick="Pick('img1')">Pick</button>
+        </form>
         </div>
     </div>
 </body>

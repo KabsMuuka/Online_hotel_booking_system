@@ -59,6 +59,15 @@ create_table_query = """
     password varchar(255) NOT NULL
     )
 """
+create_table_query = """
+    CREATE TABLE bookings(
+    booking_id SERIAL PRIMARY KEY,
+    userid INT NOT NULL,
+    checkin date NOT NULL, 
+    checkout date NOT NULL,
+    FOREIGN KEY (userID) REFERENCES register(userID)
+    )
+"""
 cursor.execute(create_table_query) 
 connection.commit()
 

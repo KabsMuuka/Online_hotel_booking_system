@@ -7,7 +7,7 @@ const customer = require('../Control/customer')
 const booking = require('../Control/booking')
 
 
-route.post('/booking',booking);
+route.post('/bookaRoom',booking);
 route.post('/login',loging);
 route.post('/sign_up',sign_up);
 route.post('/customer',customer);
