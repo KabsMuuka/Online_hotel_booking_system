@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const path = require('path')
 const route = require('./Routes/routes')
 
-const {Index, login, reserve, signup, admin, roomtype, thankyou, room1, room2, room3, room4, room5, room6} = require('./Control/ejs');
+const {Index, login, reserve, signup, admin, roomtype, thankyou, messageAfterBooking, room1, room2, room3, room4, room5, room6} = require('./Control/ejs');
 
 //nodemailer transporters
 const app = express();
@@ -45,11 +45,11 @@ app.use('/',route);
 //ejs
 app.use('/index',Index)
 app.use('/admin',admin)
-app.use('/roomtype',roomtype)
 app.use('/login',login)
 app.use('/signup',signup)
 app.use('/reserve',reserve)
 app.use('/thankyou',thankyou)
+app.use('/messageAfterBooking',messageAfterBooking)
 
 //rooms
 app.use('/room1',room1);

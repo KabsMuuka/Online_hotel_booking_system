@@ -10,6 +10,7 @@ const customer = async(req,res) =>{
         await pool.query(insertQuery,[firstName,lastName,email,gender,nationality,phoneNumber]);
         console.log(`successfully inserted data`);
         res.status(200).json({ message: 'successful added customer infor' });
+
     } catch (error) {
         console.log('failed to save data into database',error);
     }

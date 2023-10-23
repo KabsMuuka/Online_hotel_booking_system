@@ -1,6 +1,7 @@
 import psycopg2
 
 connection = psycopg2.connect(
+    host = 'localhost',
     user = 'postgres',
     password = 'kabs',
     port = '5432',
@@ -19,37 +20,8 @@ create_table_query = """
     phoneNumber varchar(100) NOT NULL
     )
 """
-create_table_query = """
-    CREATE TABLE images(
-    imageID SERIAL PRIMARY KEY,
-    path varchar(255) NOT NULL
-    )
-"""
 
 
-create_table_query = """
-    CREATE TABLE roomtype(
-    roomID SERIAL PRIMARY KEY,
-    RoomNumber INT NOT NULL, 
-    description varchar(255) NOT NULL,
-    price varchar(255) NOT NULL,
-    imageID INT,
-    FOREIGN KEY (imageID) REFERENCES images(imageID)
-    )
-"""
-create_table_query = """
-    CREATE TABLE booking(
-    bookingID SERIAL PRIMARY KEY,
-    checkInDate DATE NOT NULL, 
-    checkOutDate DATE NOT NULL,
-    price varchar(255) NOT NULL,
-    status char(50) NOT NULL,
-    customerID INT,
-    roomID INT,
-    FOREIGN KEY (customerID) REFERENCES customers(customerID),
-    FOREIGN KEY (roomID) REFERENCES roomtype(roomID)
-    )
-"""
 create_table_query = """
     CREATE TABLE register(
     userID SERIAL PRIMARY KEY,
@@ -65,7 +37,17 @@ create_table_query = """
     userid INT NOT NULL,
     checkin date NOT NULL, 
     checkout date NOT NULL,
+    room_number INT NOT NULL,
     FOREIGN KEY (userID) REFERENCES register(userID)
+    )
+"""
+create_table_query = """
+    CREATE TABLE reservations(
+    reservation_id SERIAL PRIMARY KEY,
+    status varchar(255) NOT NULL,
+    booking_id INT,
+    room_number INT NOT NULL,
+    FOREIGN KEY (booking_id) REFERENCES bookings(booking_id)
     )
 """
 cursor.execute(create_table_query) 

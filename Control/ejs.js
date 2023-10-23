@@ -16,7 +16,9 @@ const login = (req,res)=>{
 const admin = (req,res)=>{
     try {
         //rendering index.ejs to webpage
-       res.render('admin')
+       res.render('admin',{
+        message: req.flash('message')
+       });
     } catch (error) {
         res.status(404).json({message:error.message})
     }
@@ -33,19 +35,13 @@ const signup = (req,res)=>{
     }
 }
 
-const roomtype = (req,res)=>{
-    try {
-        //rendering index.ejs to webpage
-       res.render('roomtype');
-    } catch (error) {
-        res.status(404).json({message:error.message})
-    }
-}
 
 const Index = (req,res)=>{
     try {
         //rendering index.ejs to webpage
-        res.render('index');
+        res.render('index',{
+            userid : req.flash('userid')
+        });
     } catch (error) {
         res.status(404).json({message:error.message})
     }
@@ -64,6 +60,17 @@ const thankyou = (req,res)=> {
      res.render('thankyou', {
         message: req.flash('message')
 
+       }) 
+    } catch (error) {
+        res.status(404).json({message:error.message})
+    }
+}
+
+const messageAfterBooking = (req,res)=> {
+    try {
+        //rendering index.ejs to webpage
+     res.render('messageAfterBooking', {
+        message: req.flash('message')
        }) 
     } catch (error) {
         res.status(404).json({message:error.message})
@@ -104,11 +111,11 @@ module.exports = {
     //renders
     Index,
     login,
-    roomtype,
     signup,
     reserve,
     admin,
     thankyou,
+    messageAfterBooking,
 
     //images
     room1,

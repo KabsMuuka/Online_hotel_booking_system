@@ -22,6 +22,9 @@
     justify-content: end; 
     padding: 6px;
 }
+.a:hover{
+    color: tomato;
+}
 .form-row {
     display: flex;
     margin: 5px 0;
