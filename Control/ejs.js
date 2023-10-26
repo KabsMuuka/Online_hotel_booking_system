@@ -77,6 +77,55 @@ const messageAfterBooking = (req,res)=> {
     }
 }
 
+const home = (req,res)=> {
+    try {
+        //rendering index.ejs to webpage
+         res.render('home', {
+        message: req.flash('message')
+       }) 
+    } catch (error) {
+        res.status(404).json({message:error.message})
+    }
+}
+
+const services = (req,res)=> {
+    try {
+        //rendering index.ejs to webpage
+         res.render('services') 
+    } catch (error) {
+        res.status(404).json({message:error.message})
+    }
+}
+
+const gallery = (req,res)=> {
+    try {
+        //rendering index.ejs to webpage
+         res.render('gallery') 
+    } catch (error) {
+        res.status(404).json({message:error.message})
+    }
+}
+
+const contact = (req,res)=> {
+    try {
+        //rendering index.ejs to webpage
+         res.render('contact') 
+    } catch (error) {
+        res.status(404).json({message:error.message})
+    }
+}
+
+
+const about = (req,res)=> {
+    try {
+        //rendering index.ejs to webpage
+         res.render('about') 
+    } catch (error) {
+        res.status(404).json({message:error.message})
+    }
+}
+
+
 //images
 const room1 = (req,res)=>{
     res.render('room1');
@@ -116,6 +165,11 @@ module.exports = {
     admin,
     thankyou,
     messageAfterBooking,
+    home,
+    contact,
+    gallery,
+    services,
+    about,
 
     //images
     room1,

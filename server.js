@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const path = require('path')
 const route = require('./Routes/routes')
 
-const {Index, login, reserve, signup, admin, roomtype, thankyou, messageAfterBooking, room1, room2, room3, room4, room5, room6} = require('./Control/ejs');
+const {Index, login, reserve, signup, admin, home, thankyou, messageAfterBooking, room1, room2, room3, room4, room5, room6, contact, gallery, services, about} = require('./Control/ejs');
 
 //nodemailer transporters
 const app = express();
@@ -51,6 +51,14 @@ app.use('/reserve',reserve)
 app.use('/thankyou',thankyou)
 app.use('/messageAfterBooking',messageAfterBooking)
 
+app.use('/home',home)
+app.use('/contact',contact)
+app.use('/gallery',gallery)
+app.use('/services',services)
+app.use('/about',about)
+
+
+
 //rooms
 app.use('/room1',room1);
 app.use('/room2',room2);
@@ -62,21 +70,5 @@ app.use('/room6',room6);
 
 
 
-
-
-
-
-//saving imgs in the database!
-// function Pick(imageID){
-//     const imgElement = document.getElementById(imageID);
-    
-//     const selectedSrc = imgElement.scr;
-//     const selectedAlt = imgElement.alt;
-//     app.post('/api/images',(req,res)=>{
-//         console.log(selectedAlt);
-//         console.log(selectedSrc);
-//     });
-// }
-// Pick();
 
 

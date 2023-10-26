@@ -1,57 +1,211 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="/styles.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>High-Sky Hotel</title>
-</head>
-<body>
-    <div>
-       
-        
-        <!-- <p>profile <span>About</span></p>  -->
-         <!-- <a  class="reserveRoom" href="./reserve">Reserved room</a> -->
-         <a class="back_button"  href="login"> <img  src="/images/logut.png"  width="30" > </a>
-       
-        <hr> 
-        
-        <p class="userid"> user id <%= userid%> </p>
-        <h1>High-Sky Hotel </h1>
-        <img class="headerImage" src="/images/header.jpg">    
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Hotel Website | Home</title>
+		<link href="/css/style.css" rel="stylesheet" type="text/css"  media="all" />
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/responsiveslides.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="js/responsiveslides.min.js"></script>
+		  <script>
+		    // You can also use "$(window).load(function() {"
+			    $(function () {
+			
+			      // Slideshow 1
+			      $("#slider1").responsiveSlides({
+			        maxwidth: 1600,
+			        speed: 600
+			      });
+			});
+		  </script>
+	</head>
+	<body>
+		<!---start-Wrap--->
+			<!---start-header--->
+			<div class="header">
+				<div class="wrap">
+					<div class="header-top">
+						<div class="logo">
+							<a style="color: black;" href="index"> High-Sky-Hotel</a>
+						</div>
+						<div class="contact-info">
+							<p class="phone">Call us : <a href="#">+260XXXXXXX</a></p>
+		
+						</div>
+						<div class="clear"> </div>
+					</div>
+				</div>
+				<div class="header-top-nav">
+					<div class="wrap">
+						<ul>
+							<li class="active"><a href="index">Home</a></li>
+							<li><a href="about">About</a></li>
+							<li><a href="services">Services</a></li>
+							<li><a href="contact">Contact</a></li>
+							<div class="clear"> </div>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!---End-header--->
+			<div class="clear"> </div>
+			<!--start-image-slider---->
+					<div class="image-slider">
+						<!-- Slideshow 1 -->
+						    <ul class="rslides" id="slider1">
+						      <li><img src="/images/slider3.jpg" alt=""></li>
+						      <li><img src="/images/slider1.jpg" alt=""></li>
+						      <li><img src="/images/slider3.jpg" alt=""></li>
+						    </ul>
+						 <!-- Slideshow 2 -->
+					</div>
+					<!--End-image-slider---->
+			<!---start-content----->
 
-        <div class="images"> 
-            <div>
-                <img src="/images/img1.jpg" id="img1" alt="room1" width="500">
-                <button onclick="Pick('img1')">pick</button>
-            </div>
-            <div>
-                <img src="/images/img2.jpg" id="img2" alt="room2" width="500">  
-                <button onclick="Pick('img2')">pick</button>
-            </div>
-            <div>
-                <img src="/images/img3.jpg" id="img3" alt="room3" width="500"> 
-                <button onclick="Pick('img3')">pick</button>
-            </div>
+			<!-- kabs -->
+			<div class="images"> 
+				<div>
+					<img src="/images/img1.jpg" id="img1" alt="room1" width="500">
+					<button onclick="Pick('img1')">pick</button>
+				</div>
+				<div>
+					<img src="/images/img2.jpg" id="img2" alt="room2" width="500">  
+					<button onclick="Pick('img2')">pick</button>
+				</div>
+				<div>
+					<img src="/images/img3.jpg" id="img3" alt="room3" width="500"> 
+					<button onclick="Pick('img3')">pick</button>
+				</div>
+	
+				<div>
+					<img src="/images/img4.jpeg" id="img4" alt="room4" width="500"> 
+					<button onclick="Pick('img4')">pick</button>
+				</div>
+	
+				<div>
+					<img src="/images/img5.jpg" id="img5" alt="room5" width="500"> 
+					<button onclick="Pick('img5')">pick</button>
+				</div>
+	
+				<div>
+					<img src="/images/img6.jpg" id="img6" alt="room6" width="500"> 
+					<button onclick="Pick('img6')">pick</button>
+				</div>
+			</div>
+			<hr> 
+		</div>
+	
+		<script src="../app.js"> </script>
 
-            <div>
-                <img src="/images/img4.jpeg" id="img4" alt="room4" width="500"> 
-                <button onclick="Pick('img4')">pick</button>
-            </div>
+			<!-- kabs -->
 
-            <div>
-                <img src="/images/img5.jpg" id="img5" alt="room5" width="500"> 
-                <button onclick="Pick('img5')">pick</button>
-            </div>
 
-            <div>
-                <img src="/images/img6.jpg" id="img6" alt="room6" width="500"> 
-                <button onclick="Pick('img6')">pick</button>
-            </div>
-        </div>
-        <hr> 
-    </div>
-
-    <script src="../app.js"> </script>
-</body>
+			<div class="content">
+				<div class="quit">
+					<p><span class="start">We Believe ,</span> We Trust ,<span class="end">We Deliever .</span></p>
+				</div>
+					<div class="content-grids">
+						<div class="wrap">
+						<div class="content-grid">
+							<div class="content-grid-pic">
+								<a href="#"><img src="images/icon1.png" title="image-name" /></a>
+							</div>
+							<div class="content-grid-info">
+								<h3>Best food </h3>
+								<p>"DESCRIPTION"</p>
+								<a href="#">Read More</a>
+							</div>
+							<div class="clear"> </div>
+						</div>
+						<div class="content-grid">
+							<div class="content-grid-pic">
+								<a href="#"><img src="images/icon2.png" title="image-name" /></a>
+							</div>
+							<div class="content-grid-info">
+								<h3>24-7 phone support</h3>
+								<p>"DESCRIPTION"</p>
+								<a href="#">Read More</a>
+							</div>
+							<div class="clear"> </div>
+						</div>
+						<div class="content-grid">
+							<div class="content-grid-pic">
+								<a href="#"><img src="images/iocn3.png" title="image-name" /></a>
+							</div>
+							<div class="content-grid-info">
+								<h3>Best Room Services</h3>
+								<p>"DESCRIPTION"</p>
+								<a href="#">Read More</a>
+							</div>
+							<div class="clear"> </div>
+						</div>
+						
+						<div class="clear"> </div>
+					</div>
+				</div>
+				<div class="clear"> </div>
+				<div class="content-box">
+					<div class="wrap">
+					<div class="content-box-left">
+						<div class="content-box-left-topgrid">
+							<h3>welcome to our High-Sky Hotel</h3>
+							<p> ' Feel Like Home :)</p>
+							<p> High-Sky Hotel is the best in town!</p>
+							<span>For more information about our Hotel, email kabwalimuuka@gmail.com</span>
+						</div>
+						<div class="content-box-left-bootomgrids">
+							<div class="content-box-left-bootomgrid">
+								<h3>Deluxe Rooms</h3>
+								<p> Your description about deluxe rooms</p>
+								<a href="#"><img src="images/slider1.jpg" title="image-name" /></a>
+							</div>
+							<div class="content-box-left-bootomgrid">
+								<h3>Luxury Rooms</h3>
+								<p>Your description about Luxury rooms</p>
+								<a href="#"><img src="images/slider2.jpg" title="image-name" /></a>
+							</div>
+							<div class="content-box-left-bootomgrid lastgrid">
+								<h3>Executive Rooms</h3>
+								<p>Your description about Executive rooms</p>
+								<a href="#"><img src="images/slider3.jpg" title="image-name" /></a>
+							</div>
+							<div class="clear"> </div>
+						</div>
+						<div class="clear"> </div>
+					</div>
+					<div class="content-box-right">
+						<div class="content-box-right-topgrid">
+							<h3>To days Specials</h3>
+							<a href="#"><img src="images/slider1.jpg" title="imnage-name" /></a>
+							<h4>Super Discount Offer</h4>
+							<p>"DESCRIPTION"</p>
+							<a href="#">Read More</a>
+						</div>
+						<div class="content-box-right-bottomgrid">
+							
+						</div>
+					</div>
+					<div class="clear"> </div>
+				</div>
+				<div class="clear"> </div>
+				<div class="boxs">
+				<div class="wrap">
+				<div class="box">
+				</div>
+		
+				<div class="clear"> </div>
+			</div>
+			<!---start-box---->
+		</div>
+		<!---start-copy-Right----->
+		<div class="copy-tight">
+			<p>&copy,High-Sky Hotel 2023 "</p>
+		</div>
+		<!---End-copy-Right----->
+			</div>
+			<!---End-content----->
+		</div>
+		<!---End-Wrap--->
+	</body>
 </html>
+
