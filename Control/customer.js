@@ -7,10 +7,16 @@ const customer = async(req,res) =>{
     INSERT INTO customer(fullName, userEmail, userPhone)
     VALUES($1, $2, $3)
     `
+    const userAlreadyExist = await pool.query(`SELECT userEmail FROM customer WHERE userEmail =$1`,[userEmail]);
     try {
-        await pool.query(insertQuery,[fullName, userEmail, userPhone]);
-        req.flash('message','successful added customer infor');
-        res.redirect('messageAfterBooking')
+        if(userAlreadyExist.rows.length > 0){
+            req.flash('message','User by those credentials already exists');
+            res.redirect('contact')
+        }else {
+            await pool.query(insertQuery,[fullName, userEmail, userPhone]);
+            req.flash('message','Successfully and Securely saved your Credentials');
+            res.redirect('messageAfterBooking')
+        }
     } catch (error) {
         req.flash('message','Something went wrong try again');
         res.redirect('contact')

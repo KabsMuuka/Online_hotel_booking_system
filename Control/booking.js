@@ -24,7 +24,7 @@ const booking =  async(req,res) =>{
 
                 }else{ 
                     await pool.query(insertQuery,[checkIn, checkOut, room_number]);
-                    req.flash('message','successfully booked room ')
+                    req.flash("message","You've Successfully Booked room")
                     res.redirect('messageAfterBooking');
                 }
             
