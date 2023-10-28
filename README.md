@@ -8,7 +8,7 @@ Rooms
 <img src='./public/images/rooms.png'>
 
 Booking a Room
-<img src='./public/images/bookingroom.png'>
+<img src='./public/images/bookingAroom.png'>
 
 Reserved Rooms
 <img src='./public/images/bookedRoom.png'>
