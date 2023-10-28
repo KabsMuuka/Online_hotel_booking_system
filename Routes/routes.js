@@ -9,7 +9,6 @@ const reservations = require('../Control/reservations')
 route.post('/reservations',reservations);
 route.post('/bookaRoom',booking);
 route.post('/customer',customer);
-
 route.get('/reserve',bookedDate);
 
 

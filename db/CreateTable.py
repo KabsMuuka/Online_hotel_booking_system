@@ -29,14 +29,14 @@ create_table_query = """
     )
  """
 
-# create_table_query = """
-#     CREATE TABLE customer(
-#     customerID SERIAL PRIMARY KEY,
-#     fullName varchar(255) NOT NULL, 
-#     userEmail varchar(255) NOT NULL,
-#     userPhone varchar(100) NOT NULL
-#     )
-# """
+create_table_query = """
+    CREATE TABLE customer(
+    customerID SERIAL PRIMARY KEY,
+    fullName varchar(255) NOT NULL, 
+    userEmail varchar(255) NOT NULL,
+    userPhone varchar(100) NOT NULL
+    )
+"""
 
 # create_table_query = """
 #     CREATE TABLE reservations(
