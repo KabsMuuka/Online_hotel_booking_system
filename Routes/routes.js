@@ -10,7 +10,7 @@ route.post('/reservations',reservations);
 route.post('/bookaRoom',booking);
 route.post('/customer',customer);
 
-route.get('/bookedDate',bookedDate);
+route.get('/reserve',bookedDate);
 
 
 module.exports = route;

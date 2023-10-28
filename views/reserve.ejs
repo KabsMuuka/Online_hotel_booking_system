@@ -3,33 +3,32 @@
 <head>
     <link rel="stylesheet" href="reserve.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserve room</title>
+    <title>Reserved Rooms</title>
 </head>
-<body>
-    <div class="back_button"><a  href="index"> <img src="/images/logut.png"  width="30" > </a> </div>
-
-    <div> 
-        <!-- reserve.ejs -->
-<h1>Reserved Dates</h1>
-    <ul>
-    <% if (bookedDates) { %>
-        <% bookedDates.forEach(booking => { %>
-        <li>
-            Room: <%= booking.room_number %>
-            Check-in: <%= booking.checkin %>
-            Check-out: <%= booking.checkOut %>
-        </li>
-        <% }); %>
-    <% } else { %>
-        <li>No booked dates available</li>
-    <% } %>
-    </ul>
-
+<body class="bg-gray-100">
+    <div>
+        <a href="rooms" class="text-white">
+            <img src="/images/logut.png" alt="Back" width="30">
+        </a>
     </div>
-    <h1>Reserved Room</h1>
-    <hr>
 
-
-   
+    <div class="container mx-auto py-8">
+        <h1>Reserved Rooms/Dates</h1>
+        <ul class="space-y-4">
+        <% if (bookedDates) { %>
+            <% bookedDates.forEach(booking => { %>
+                <li >
+                    <p> <strong> Room: </strong> <%= booking.room_number %></p>
+                    <p> <strong> Check-in: </strong> <%= booking.checkin %></p>
+                    <p><strong> Check-out: </strong>  <%=booking.checkout %></p>
+                </li>
+            <% }); %>
+        <% } else { %>
+            <li >
+                <p class="text-lg font-semibold">No booked dates available</p>
+            </li>
+        <% } %>
+        </ul>
+    </div>
 </body>
 </html>
