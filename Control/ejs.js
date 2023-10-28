@@ -49,7 +49,9 @@ const Index = (req,res)=>{
 const reserve = (req,res)=>{
     try {
         //rendering index.ejs to webpage
-       res.render('reserve') 
+       res.render('reserve',{
+        bookedDates : req.flash('bookedDates')
+       }) 
     } catch (error) {
         res.status(404).json({message:error.message})
     }
@@ -97,19 +99,14 @@ const services = (req,res)=> {
     }
 }
 
-const gallery = (req,res)=> {
-    try {
-        //rendering index.ejs to webpage
-         res.render('gallery') 
-    } catch (error) {
-        res.status(404).json({message:error.message})
-    }
-}
+
 
 const contact = (req,res)=> {
     try {
         //rendering index.ejs to webpage
-         res.render('contact') 
+         res.render('contact',{
+            message: req.flash('message')
+         }) 
     } catch (error) {
         res.status(404).json({message:error.message})
     }
@@ -125,32 +122,87 @@ const about = (req,res)=> {
     }
 }
 
+const rooms = (req,res)=> {
+    try {
+        //rendering index.ejs to webpage
+         res.render('rooms',{
+            message: req.flash('message')
+         });
+    } catch (error) {
+        res.status(404).json({message:error.message})
+    }
+}
+
 
 //images
 const room1 = (req,res)=>{
-    res.render('room1');
+    try {
+        //rendering index.ejs to webpage
+        res.render('room1',{
+            message : req.flash('message')
+        });
+    } catch (error) {
+        res.status(404).json({message:error.message})
+    }
 }
 
 
 const room2 = (req,res)=>{
-    res.render('room2');
+    try {
+        //rendering index.ejs to webpage
+        res.render('room2',{
+            message : req.flash('message')
+        });
+    } catch (error) {
+        res.status(404).json({message:error.message})
+    }
 }
 
 const room3 = (req,res)=>{
-    res.render('room3');
+    try {
+        //rendering index.ejs to webpage
+        res.render('room3',{
+            message : req.flash('message')
+        });
+    } catch (error) {
+        res.status(404).json({message:error.message})
+    }
 }
 
 const room4 = (req,res)=>{
-    res.render('room4');
+    try {
+        //rendering index.ejs to webpage
+        res.render('room1',{
+            message : req.flash('message')
+        });
+    } catch (error) {
+        res.status(404).json({message:error.message})
+    }
 }
 
+
 const room5 = (req,res)=>{
-    res.render('room5');
+    try {
+        //rendering index.ejs to webpage
+        res.render('room5',{
+            message : req.flash('message')
+        });
+    } catch (error) {
+        res.status(404).json({message:error.message})
+    }
 }
 
 const room6 = (req,res)=>{
-    res.render('room6');
+    try {
+        //rendering index.ejs to webpage
+        res.render('room6',{
+            message : req.flash('message')
+        });
+    } catch (error) {
+        res.status(404).json({message:error.message})
+    }
 }
+
 
 
 
@@ -167,9 +219,9 @@ module.exports = {
     messageAfterBooking,
     home,
     contact,
-    gallery,
     services,
     about,
+    rooms,
 
     //images
     room1,

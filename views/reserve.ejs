@@ -8,26 +8,28 @@
 <body>
     <div class="back_button"><a  href="index"> <img src="/images/logut.png"  width="30" > </a> </div>
 
+    <div> 
+        <!-- reserve.ejs -->
+<h1>Reserved Dates</h1>
+    <ul>
+    <% if (bookedDates) { %>
+        <% bookedDates.forEach(booking => { %>
+        <li>
+            Room: <%= booking.room_number %>
+            Check-in: <%= booking.checkin %>
+            Check-out: <%= booking.checkOut %>
+        </li>
+        <% }); %>
+    <% } else { %>
+        <li>No booked dates available</li>
+    <% } %>
+    </ul>
+
+    </div>
     <h1>Reserved Room</h1>
     <hr>
-    <div>
-        <img class="image" src="/images/default_image.jpg" id="reserveImg" alt="default" width="500">
-    </div>
-    <hr>
-    <!-- Add a button or link to return to the selection page if needed -->
+
+
+   
 </body>
-    <script>
-        // Retrieve the selected image details from local storage
-        const selectedImageSrc = localStorage.getItem('selectedImageSrc');
-        const selectedImageAlt = localStorage.getItem('selectedImageAlt');
-
-        console.log(selectedImageAlt);
-
-        // Display the selected image
-        if (selectedImageSrc && selectedImageAlt) {
-            const reserveImage = document.getElementById('reserveImg');
-            reserveImage.src = selectedImageSrc;
-            reserveImage.alt = selectedImageAlt;
-            }
-    </script>
 </html>
