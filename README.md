@@ -1,18 +1,17 @@
 # Online_hotel_booking_system 
 A customer can pick a room of choice and reserve it.
 
-SignUp page
-<img src='./public/images/signupPage.png'>
+Hotel
+<img src='./public/images/hotel.png'>
 
-Login page 
-<img src='./public/images/loginPage.png'>
+Rooms
+<img src='./public/images/rooms.png'>
 
-Home page
-<img src='./public/images/ss1.png'>
+Booking a Room
+<img src='./public/images/bookingroom.png'>
 
-detailed view of a room
-<img src='./public/images/room.png'>
+Reserved Rooms
+<img src='./public/images/bookedRoom.png'>
 
-reserved room
-
-<img src='./public/images/ss3.png'>
+About
+<img src='./public/images/about.png'>
