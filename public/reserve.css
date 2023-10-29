@@ -35,3 +35,11 @@ p {
     margin: 2%;
 
 }
+
+.deleteButton{
+    background-color: white;
+    border-color: aqua;
+
+    margin-bottom: 2%;
+  
+}

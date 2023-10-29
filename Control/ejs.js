@@ -172,7 +172,7 @@ const room3 = (req,res)=>{
 const room4 = (req,res)=>{
     try {
         //rendering index.ejs to webpage
-        res.render('room1',{
+        res.render('room4',{
             message : req.flash('message')
         });
     } catch (error) {

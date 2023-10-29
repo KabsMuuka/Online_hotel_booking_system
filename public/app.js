@@ -8,7 +8,6 @@ function Pick(imageId) {
     if (selectedAlt) {
         // Save the selected image alt (room number) to local storage
         localStorage.setItem('selectedImageAlt', selectedAlt);
-        console.log(selectedAlt);
 
         // Navigate to the selected image's HTML page
         window.location.href = `${selectedAlt}`;

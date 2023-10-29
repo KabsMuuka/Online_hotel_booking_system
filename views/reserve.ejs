@@ -14,15 +14,36 @@
 
     <div class="container mx-auto py-8">
         <h1>Reserved Rooms/Dates</h1>
+
         <ul class="space-y-4">
         <% if (bookedDates) { %>
             <% bookedDates.forEach(booking => { %>
                 <li >
+                    <!-- using ejs to grab the booking_id from the database -->
+
+                <!-- customise the button  ????????? -->
+                <button class="deleteButton" data-booking-id= <%=booking.booking_id %> > <img  src="/images/deleteIcon.svg" width="60%"/> </button>
+                
                     <p> <strong> Room: </strong> <%= booking.room_number %></p>
                     <p> <strong> Check-in: </strong> <%= booking.checkin %></p>
                     <p><strong> Check-out: </strong>  <%=booking.checkout %></p>
+                 
+
+                    <%
+                    <!-- calculate the number of numberOfDays -->
+                    const checkInDate = new Date(booking.checkin)
+                    const checkOutDate = new Date(booking.checkout)
+
+                      <!-- Total price calculation -->
+                    <!-- //this is very Good!!!!!!! -->
+                    const numberOfDays = Math.max(Math.ceil((checkOutDate - checkInDate) / (1000 * 60 * 60 * 24)), 1)
+                    const pricePerDay = 350 
+                    const totalPrice = numberOfDays * pricePerDay
+                    %>
+                    <p> <Strong> TotalPrice: </Strong>  K<%=totalPrice%> </p>
+
                 </li>
-            <% }); %>
+            <% }) %>
         <% } else { %>
             <li >
                 <p class="text-lg font-semibold">No booked dates available</p>
@@ -30,5 +51,32 @@
         <% } %>
         </ul>
     </div>
+
+    <script>
+        //select the button and add an addEventListener to it
+        document.querySelectorAll('.deleteButton').forEach(button => {
+        button.addEventListener('click', 
+
+        async function Delete(event){
+            const targetedButton = event.target;
+            //get the id from that each attribute is associated with in the DATABASE = BOOKINGS 
+            const bookingId = targetedButton.getAttribute('data-booking-id');
+            //console.log(bookingId);
+
+            //URL when the user clicks id= deleteButton, its trigering a attribute with its specific id.
+            const res = await fetch(`deleteButton/${bookingId}`, {
+                method : 'Delete'
+            })
+            //if the backend has successfully deleted a specified id, it should be go ahead a refresh the page
+            if (res.status === 200) {
+            window.location.href = '/reserve';
+            alert('Successfully deleted a Booking');
+            } else {
+            alert('Booking was not successfully deleted');
+            }
+             }) 
+        })
+
+    </script>
 </body>
 </html>
