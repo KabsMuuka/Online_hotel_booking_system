@@ -19,11 +19,7 @@
         <% if (bookedDates) { %>
             <% bookedDates.forEach(booking => { %>
                 <li >
-                    <!-- using ejs to grab the booking_id from the database -->
-
-                <!-- customise the button  ????????? -->
-                <button class="deleteButton" data-booking-id= <%=booking.booking_id %> > <img  src="/images/deleteIcon.svg" width="60%"/> </button>
-                
+                    <!-- using ejs to grab the booking_id from the database --> 
                     <p> <strong> Room: </strong> <%= booking.room_number %></p>
                     <p> <strong> Check-in: </strong> <%= booking.checkin %></p>
                     <p><strong> Check-out: </strong>  <%=booking.checkout %></p>
@@ -42,6 +38,14 @@
                     %>
                     <p> <Strong> TotalPrice: </Strong>  K<%=totalPrice%> </p>
 
+                    <% if(booking.booking_id)  { %>
+                        <button title="delete...!" class="deleteButton" data-booking-id= <%=booking.booking_id %> >
+                             <img src="/images/deleteIcon.svg" width="50%"/>
+                        </button>
+        
+                        <% } else { %>
+                            console.log('attribute not deleted')
+                            <% } %>
                 </li>
             <% }) %>
         <% } else { %>

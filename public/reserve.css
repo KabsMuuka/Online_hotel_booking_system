@@ -38,8 +38,8 @@ p {
 
 .deleteButton{
     background-color: white;
-    border-color: aqua;
-
-    margin-bottom: 2%;
+    border-radius: 70px;
+    border-color: rgb(174, 125, 219);
+    margin-top: 5%;
   
 }
