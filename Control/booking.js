@@ -17,11 +17,20 @@ const booking =  async(req,res) =>{
         [room_number,checkIn,checkOut]
         );
 
+          //checking current dates
+        const currentDate = new Date();
+        const selectedCheckInDate = new Date(checkIn);
+        const selectedCheckOutDate = new Date(checkOut);
+
         try {
             if(bookedRoom.rows.length > 0) { 
                 req.flash('message',`Sorry!!, Room ${room_number}, has been booked already between '${checkIn}' To '${checkOut}'`);
                 res.redirect('rooms');
 
+            }else if( selectedCheckInDate < currentDate || selectedCheckOutDate < currentDate){
+                    req.flash("message","Please choose correct dates");
+                    res.redirect('rooms');
+                
                 }else{ 
                     await pool.query(insertQuery,[checkIn, checkOut, room_number]);
                     req.flash("message","You've Successfully Booked room")
