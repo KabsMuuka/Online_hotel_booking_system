@@ -3,9 +3,9 @@ import psycopg2
 connection = psycopg2.connect(
     host = 'localhost',
     user = 'postgres',
-    password = 'kabs',
+    password = 'password',
     port = '5432',
-    database = 'HOTEL'
+    database = 'hotel'
 )
 cursor = connection.cursor()
 
@@ -24,8 +24,7 @@ create_table_query = """
     CREATE TABLE bookings(
     booking_id SERIAL PRIMARY KEY,
     checkin date NOT NULL, 
-    checkout date NOT NULL,
-    room_number INT NOT NULL
+    checkout date NOT NULL
     )
  """
 
@@ -38,15 +37,14 @@ create_table_query = """
     )
 """
 
-# create_table_query = """
-#     CREATE TABLE reservations(
-#     reservation_id SERIAL PRIMARY KEY,
-#     status varchar(255) NOT NULL,
-#     booking_id INT,
-#     room_number INT NOT NULL,
-#     FOREIGN KEY (booking_id) REFERENCES bookings(booking_id)
-#     )
-# """
+create_table_query = """
+    CREATE TABLE reservations(
+    reservation_id SERIAL PRIMARY KEY,
+    status varchar(255) NOT NULL,
+    booking_id INT,
+    FOREIGN KEY (booking_id) REFERENCES bookings(booking_id)
+    )
+"""
 cursor.execute(create_table_query) 
 connection.commit()
 
